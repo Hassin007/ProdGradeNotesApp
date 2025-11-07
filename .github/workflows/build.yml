@@ -32,8 +32,9 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           projectBaseDir: ./frontend
-          sonar.projectKey: Hassin007_ProdGradeNotesApp
-          sonar.organization: hassin007
+          args: >
+            -Dsonar.projectKey=Hassin007_ProdGradeNotesApp
+            -Dsonar.organization=hassin007
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
@@ -62,8 +63,9 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           projectBaseDir: ./backend
-          sonar.projectKey: Hassin007_ProdGradeNotesApp
-          sonar.organization: hassin007
+          args: >
+            -Dsonar.projectKey=Hassin007_ProdGradeNotesApp
+            -Dsonar.organization=hassin007
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
