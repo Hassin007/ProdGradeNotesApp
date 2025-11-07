@@ -26,7 +26,7 @@ jobs:
 
       - name: Run tests with coverage (Frontend)
         working-directory: ./frontend
-        run: npm test -- --coverage
+        run: npm test -- --coverage --coverageReporters=lcov
 
       - name: SonarQube Scan (Frontend)
         uses: SonarSource/sonarqube-scan-action@v6
@@ -35,6 +35,8 @@ jobs:
           args: >
             -Dsonar.projectKey=Hassin007_ProdGradeNotesApp
             -Dsonar.organization=hassin007
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.sources=src
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
@@ -57,7 +59,7 @@ jobs:
 
       - name: Run tests with coverage (Backend)
         working-directory: ./backend
-        run: npm test -- --coverage
+        run: npm test -- --coverage --coverageReporters=lcov
 
       - name: SonarQube Scan (Backend)
         uses: SonarSource/sonarqube-scan-action@v6
@@ -66,6 +68,8 @@ jobs:
           args: >
             -Dsonar.projectKey=Hassin007_ProdGradeNotesApp
             -Dsonar.organization=hassin007
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.sources=src
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
