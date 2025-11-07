@@ -22,16 +22,18 @@ jobs:
 
       - name: Install dependencies (Frontend)
         working-directory: ./frontend
-        run: yarn install
+        run: npm install
 
       - name: Run tests with coverage (Frontend)
         working-directory: ./frontend
-        run: yarn jest --coverage
+        run: npm test -- --coverage
 
       - name: SonarQube Scan (Frontend)
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           projectBaseDir: ./frontend
+          sonar.projectKey: Hassin007_ProdGradeNotesApp
+          sonar.organization: hassin007
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
@@ -50,16 +52,18 @@ jobs:
 
       - name: Install dependencies (Backend)
         working-directory: ./backend
-        run: yarn install
+        run: npm install
 
-      - name: Run tests (Backend)
+      - name: Run tests with coverage (Backend)
         working-directory: ./backend
-        run: yarn test
+        run: npm test -- --coverage
 
       - name: SonarQube Scan (Backend)
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           projectBaseDir: ./backend
+          sonar.projectKey: Hassin007_ProdGradeNotesApp
+          sonar.organization: hassin007
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
