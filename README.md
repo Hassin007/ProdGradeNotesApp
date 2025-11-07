@@ -1,65 +1,52 @@
-# Ⓝ Notiq - Modern Notes Application
+# Notiq - Modern Notes Application
 
-A full-stack notes application built with React.js, Node.js, and MongoDB featuring real-time synchronization, advanced organization, and seamless user experience.
+A full-stack notes application built with React.js, Node.js, and MongoDB. Features real-time synchronization, advanced organization tools, and a seamless user experience.
 
-![SonarQube Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen)
+![Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen)
 ![Test Coverage](https://img.shields.io/badge/Coverage-85%25-green)
 ![Security Rating](https://img.shields.io/badge/Security-A-brightgreen)
-![Vulnerabilities](https://img.shields.io/badge/Vulnerabilities-0-green)
+![React](https://img.shields.io/badge/React-18.2.0-61dafb)
+![Node.js](https://img.shields.io/badge/Node.js-20.0+-339933)
+![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-47a248)
+![Express](https://img.shields.io/badge/Express-4.18.0-000000)
+![Jest](https://img.shields.io/badge/Jest-29.0+-c21325)
+![SonarQube](https://img.shields.io/badge/SonarQube-Analyzed-4e9aec)
 
-## 🚀 Features
+## Features
 
-### ✨ Core Functionality
-- **📝 Rich Text Notes** - Create, edit, and organize notes with ease
-- **🏷️ Smart Tagging** - Categorize notes with custom tags
-- **🔍 Advanced Search** - Full-text search across all notes
-- **📂 Organization** - Archive, pin, and categorize notes
+### Core Functionality
+- Create, edit, and organize notes with rich text support
+- Categorize notes with custom tags and labels
+- Advanced search across all notes and content
+- Archive and pin important notes for better organization
 
-### 🔐 Security & User Management
-- **Secure Authentication** - JWT-based login/register system
-- **Password Protection** - BCrypt hashing with salt rounds
-- **Session Management** - Secure token-based authentication
-- **User Isolation** - Complete data separation between users
+### Security & Authentication
+- Secure JWT-based authentication system
+- Password protection with BCrypt hashing
+- Secure token-based session management
+- Complete data isolation between users
 
-### 📱 User Experience
-- **Responsive Design** - Works seamlessly on desktop and mobile
-- **Dark/Light Theme** - Toggle between themes
-- **Real-time Updates** - Instant synchronization
-- **Intuitive UI** - Clean, modern interface with smooth animations
+### User Experience
+- Fully responsive design for desktop and mobile
+- Dark and light theme options
+- Real-time updates and synchronization
+- Clean, intuitive interface with smooth animations
 
-## 🛠️ Tech Stack
+### Quality Assurance
+- Jest - Testing framework
+- React Testing Library - Component testing
+- SonarQube - Code quality and security analysis
+- GitHub Actions - CI/CD pipeline
 
-### Frontend
-- **React.js** - Modern UI framework
-- **Framer Motion** - Smooth animations and transitions
-- **Tailwind CSS** - Utility-first CSS framework
-- **React Router** - Client-side routing
-- **React Hot Toast** - User notifications
-- **Lucide React** - Beautiful icons
-
-### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web application framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
-- **JWT** - JSON Web Tokens for authentication
-- **BCrypt** - Password hashing
-- **CORS** - Cross-origin resource sharing
-
-### Testing & Quality
-- **Jest** - Testing framework
-- **React Testing Library** - Component testing
-- **SonarQube** - Code quality and security analysis
-- **GitHub Actions** - CI/CD pipeline
-
-## 📦 Installation
+## Installation Guide
 
 ### Prerequisites
 - Node.js (v20 or higher)
 - MongoDB (local or Atlas)
-- npm 
+- npm package manager
 
 ### Backend Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/notes-app.git
@@ -68,9 +55,9 @@ cd notes-app/backend
 # Install dependencies
 npm install
 
-# Environment configuration
+# Configure environment
 cp .env.example .env
-# Edit .env with your MongoDB URI and JWT secret
+# Edit the .env file with your configuration
 
 # Start development server
 npm run dev
@@ -78,6 +65,7 @@ npm run dev
 # Run tests
 npm test
 ```
+
 ### Frontend setup 
 ```bash
 # Navigate to frontend directory
@@ -90,7 +78,7 @@ npm install
 cp .env.example .env
 
 # Start development server
-npm start
+npm run dev
 # Application will open at http://localhost:3000
 
 # Run tests
