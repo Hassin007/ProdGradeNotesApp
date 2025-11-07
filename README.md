@@ -1,4 +1,4 @@
-# Notiq - Modern Notes Application
+# Ⓝ Notiq - Modern Notes Application
 
 A full-stack notes application built with React.js, Node.js, and MongoDB. Features real-time synchronization, advanced organization tools, and a seamless user experience.
 
@@ -49,7 +49,7 @@ A full-stack notes application built with React.js, Node.js, and MongoDB. Featur
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/notes-app.git
+git clone github.com/Hassin007/ProdGradeNotesApp
 cd notes-app/backend
 
 # Install dependencies
@@ -88,13 +88,16 @@ npm test
 npm run build
 ```
 
-### (.env) Backend
+# (.env) Backend
+```bash
 PORT=9000
 MONGODB_URI=mongodb://localhost:27017/notes-app
 OR for MongoDB Atlas:
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/notes-app
+```
 
-# CORS
+## CORS
+```bash
 CORS_ORIGIN=*
 For production, specify your frontend URL:
 CORS_ORIGIN=http://localhost:3000
@@ -103,18 +106,25 @@ ACCESS_TOKEN_SECRET=your-super-secure-access-token-secret-minimum-32-chars
 ACCESS_TOKEN_EXPIRY=1d
 REFRESH_TOKEN_SECRET=your-super-secure-refresh-token-secret-minimum-32-chars
 REFRESH_TOKEN_EXPIRY=7d
+```
 
-# Cloudinary for file uploads (optional)
+## Cloudinary for file uploads (optional)
+```bash
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
 CLOUDINARY_API_SECRET=your-api-secret
+```
 
-# Frontend URL
+## Frontend URL
+```bash
 FRONTEND_URL=http://localhost:3000
+```
 
-# Email service (Gmail)
+## Email service (Gmail)
+```bash
 EMAIL_SERVICE=gmail
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password  # Use App Password, not regular password
 
 NODE_ENV=development
+```
