@@ -103,12 +103,13 @@ npm run build
 ### (.env) Backend
 PORT=9000
 MONGODB_URI=mongodb://localhost:27017/notes-app
-# OR for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/notes-app
+OR for MongoDB Atlas:
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/notes-app
 
+# CORS
 CORS_ORIGIN=*
-# For production, specify your frontend URL:
-# CORS_ORIGIN=http://localhost:3000
+For production, specify your frontend URL:
+CORS_ORIGIN=http://localhost:3000
 
 ACCESS_TOKEN_SECRET=your-super-secure-access-token-secret-minimum-32-chars
 ACCESS_TOKEN_EXPIRY=1d
