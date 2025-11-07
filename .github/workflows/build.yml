@@ -7,23 +7,59 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  sonarqube:
-    name: SonarCloud Analysis
-    runs-on: windows-latest
+  sonarqube-frontend:
+    name: SonarQube Frontend
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install dependencies
-        run: yarn
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-      - name: Run tests and coverage
+      - name: Install dependencies (Frontend)
+        working-directory: ./frontend
+        run: yarn install
+
+      - name: Run tests with coverage (Frontend)
+        working-directory: ./frontend
         run: yarn jest --coverage
 
-      - name: SonarCloud Scan
+      - name: SonarQube Scan (Frontend)
         uses: SonarSource/sonarqube-scan-action@v6
+        with:
+          projectBaseDir: ./frontend
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+
+  sonarqube-backend:
+    name: SonarQube Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies (Backend)
+        working-directory: ./backend
+        run: yarn install
+
+      - name: Run tests (Backend)
+        working-directory: ./backend
+        run: yarn test
+
+      - name: SonarQube Scan (Backend)
+        uses: SonarSource/sonarqube-scan-action@v6
+        with:
+          projectBaseDir: ./backend
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
