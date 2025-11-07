@@ -59,7 +59,7 @@ describe("loginUser Handler", () => {
     expect(res.json).toHaveBeenCalledWith(
       expect.objectContaining({
         success: false,
-        message: "User does not exist",
+        message: "Invalid email or password",
       })
     );
   });
